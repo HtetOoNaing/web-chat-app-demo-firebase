@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Login</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+	<style type="text/css">
+		body{
+			padding: 0;
+			margin: 0;
+			font-family: Pacifico;
+			background: url(../images/chatbg.jpg);
+			background-size: cover;
+		}
+		.box{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 400px;
+			padding: 40px;
+			background: rgba(0,0,0,.8);
+			box-sizing: border-box;
+			box-shadow: 20px 20px 20px rgba(0,0,0,.5);
+			border-radius: 10px;
+		}
+		.box .userphoto{
+			margin-bottom : 30px;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			left: 50%;
+			top: -55px;
+			transform: translateX(-50%);
+			border-radius: 50%;
+		}
+		.box .userphoto img{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			box-shadow: 0 25px 25px rgba(0,0,0,.5);
+		}
+		.box .inputBox{
+			position: relative;
+			margin-top: 20px;
+		}
+		.box .inputBox input{
+			width: 100%;
+			padding: 10px 0; 
+			letter-spacing: 1px;
+			font-size: 16px; 
+			color: #fff;
+			margin-bottom: 20px;
+			border: none;
+			border-bottom: 1px solid #fff;
+			outline: none;
+			background: transparent;
+		}
+		.box .inputBox label{
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 10px 0; 
+			letter-spacing: 1px;
+			font-size: 16px; 
+			color: #fff;
+			pointer-events: none;
+			transition: .5s;
+		}
+		.box .inputBox input:focus ~ label,.box .inputBox input:valid ~ label{
+			top: -20px;
+			left: 0;
+			color: #03a9f4;
+			font-size: 12px;
+		}
+		.box input[type=submit]{
+			background: transparent;
+			border : none;
+			outline: none;
+			color: #fff;
+			background: #03a9f4;
+			padding: 10px 20px;
+			cursor: pointer;
+			font-family: Pacifico;
+			font-size: 15px;
+			border-radius: 10px;
+		}
+		.radio label{
+			color: #fff;
+		}
+		#department{
+			display: none;
+		}
+		#subject{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="userphoto">
+			<img src="../images/facebook.png">
+		</div>
+		<form action="" method="post">
+			<div class="inputBox">
+				<input type="text" name="name" required="">
+				<label>Username</label>
+			</div>
+			<div class="inputBox">
+				<input type="password" name="password" required="">
+				<label>Password</label>
+			</div>
+			<div class="radio">
+				<input type="radio" name="position" id="dean" value="dean" onclick="showDean()"><label id="deanlb">Dean</label>
+				<input type="radio" name="position" id="teacher" value="teacher" onclick="showTeacher()"><label id="teacherlb">Teacher</label>
+			</div>
+			<div class="inputBox" id="department" >
+				<input type="text" name="department" required="">
+				<label>Department</label>
+			</div>
+			<div class="inputBox" id="subject">
+				<input type="text" name="subject" required="">
+				<label>Subject</label>
+			</div>
+			<input type="submit" value="Login">
+		</form>
+	</div>
+	<script type="text/javascript">
+		function showDean() {
+			document.getElementById('deanlb').style.color = "#03a9f4";
+			document.getElementById('teacherlb').style.color = "#fff";
+			document.getElementById('department').style.display="block";
+			document.getElementById('subject').style.display="none";
+		}
+		function showTeacher(){
+			document.getElementById('teacherlb').style.color = "#03a9f4";
+			document.getElementById('deanlb').style.color = "#fff";
+			document.getElementById('department').style.display="block";
+			document.getElementById('subject').style.display="block";
+		}
+	</script>
+</body>
+</html>

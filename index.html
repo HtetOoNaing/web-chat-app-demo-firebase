@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Packet Code Chat Room</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDZ9Kkid8W0q9IoBCr2HNcC_jq5EhJO0xs",
+      authDomain: "webapp-4776b.firebaseapp.com",
+      databaseURL: "https://webapp-4776b.firebaseio.com",
+      projectId: "webapp-4776b",
+      storageBucket: "webapp-4776b.appspot.com",
+      messagingSenderId: "842391764408"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript" src="firebase.js"></script>
+
+</head>
+<body>
+  <div id="name_prompt_parent">
+    <div id="name_prompt">
+      <p class="title">Hey there ! Enter your name</p>
+    	<input type="text" id="name" class="form-control"><br>
+    	<button id="name_submit" class="btn btn-success">Submite</button>
+    </div>
+  </div>
+
+ <div id="chatroom">
+ 	<div id="chatnav">
+ 		
+ 	</div>
+   <div id="messages">
+     
+   </div>
+   <div id="input">
+     <textarea id="msg" class="form-control" id="message"></textarea>
+     <button id="send_button" class="btn btn-primary">Send</button>
+   </div>
+ </div>
+ 
+</body>
+</html>
